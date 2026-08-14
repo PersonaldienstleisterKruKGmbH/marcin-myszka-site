@@ -9,11 +9,34 @@
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/subpages.css">
 <link rel="stylesheet" href="assets/css/content-refresh.css">
+<style>
+.about-image-reveal{position:relative;height:100svh;min-height:760px;overflow:hidden;background:#050505;isolation:isolate}
+.about-image-reveal__media{position:absolute;inset:0;margin:0;overflow:hidden}
+.about-image-reveal__media img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 34%;transform:scale(1.001);transition:transform 1.8s cubic-bezier(.2,.7,.2,1)}
+.about-image-reveal:hover .about-image-reveal__media img{transform:scale(1.025)}
+.about-image-reveal__shade{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(3,3,3,.68) 0%,rgba(3,3,3,.20) 34%,rgba(3,3,3,.08) 58%,rgba(3,3,3,.64) 100%),linear-gradient(180deg,rgba(0,0,0,.12) 0%,rgba(0,0,0,.04) 54%,rgba(0,0,0,.58) 100%)}
+.about-image-reveal__shade::after{content:"";position:absolute;inset:0;opacity:.16;background:radial-gradient(circle at 18% 20%,rgba(215,19,27,.35),transparent 28%),linear-gradient(115deg,transparent 0 72%,rgba(215,19,27,.12) 72.2%,transparent 72.4%)}
+.about-image-reveal__meta{position:absolute;z-index:2;top:clamp(28px,4vw,64px);left:clamp(24px,4vw,72px);display:flex;align-items:center;gap:16px;font:700 10px/1 "Manrope",sans-serif;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.76)}
+.about-image-reveal__meta::before{content:"";width:44px;height:1px;background:#d7131b}
+.about-image-reveal__title{position:absolute;z-index:2;right:clamp(18px,3vw,54px);top:50%;margin:0;transform:translateY(-50%);writing-mode:vertical-rl;text-orientation:mixed;font:600 clamp(76px,8.2vw,158px)/.82 "Oswald",sans-serif;letter-spacing:-.055em;text-transform:uppercase;color:#fff;text-shadow:0 12px 42px rgba(0,0,0,.38)}
+.about-image-reveal__title .accent{color:#d7131b}
+.about-image-reveal__caption{position:absolute;z-index:2;left:clamp(24px,4vw,72px);bottom:clamp(28px,4vw,60px);max-width:520px;padding-top:17px;border-top:1px solid rgba(255,255,255,.38);font:600 clamp(12px,1vw,15px)/1.5 "Manrope",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.88)}
+.about-image-reveal__index{position:absolute;z-index:2;right:clamp(26px,4vw,70px);bottom:clamp(30px,4vw,60px);font:600 11px/1 "Manrope",sans-serif;letter-spacing:.18em;color:rgba(255,255,255,.58)}
+@media(max-width:780px){.about-image-reveal{height:82svh;min-height:620px}.about-image-reveal__media img{object-position:52% 30%}.about-image-reveal__shade{background:linear-gradient(180deg,rgba(0,0,0,.10) 0%,rgba(0,0,0,.08) 48%,rgba(0,0,0,.72) 100%)}.about-image-reveal__title{top:auto;right:auto;left:22px;bottom:100px;transform:none;writing-mode:horizontal-tb;font-size:clamp(62px,18vw,112px);line-height:.82}.about-image-reveal__title span{display:inline}.about-image-reveal__caption{left:24px;right:24px;bottom:28px;max-width:none;padding-top:12px;font-size:10px}.about-image-reveal__meta{top:24px;left:24px}.about-image-reveal__index{top:28px;right:24px;bottom:auto}}
+</style>
 </head><body class="subpage"><header data-site-header></header><main>
 <section class="editorial-hero editorial-hero--content" aria-labelledby="page-title">
   <video class="editorial-hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/video/editorial-hero-crime-poster.webp" aria-hidden="true"><source src="assets/video/editorial-hero-crime.mp4" type="video/mp4"></video>
   <div class="editorial-hero-gridlines" aria-hidden="true"></div><div class="editorial-hero-inner"><div class="editorial-hero-kicker"><span>01</span><span>/</span><span>O mnie</span></div><div class="editorial-hero-layout"><div class="editorial-hero-copy"><h1 class="editorial-hero-title" id="page-title">Człowiek<br>za głosem.</h1><p class="editorial-hero-lead">Marcin Myszka — twórca internetowy, autor i podcaster specjalizujący się w tematyce true crime. Od 2015 roku opowiada prawdziwe historie kryminalne.</p></div></div></div>
   <nav class="editorial-hero-meta" aria-label="Skróty do sekcji"><a href="#bio">Biografia</a><a href="#liczby">Liczby</a><a href="#droga">Droga</a></nav>
+</section>
+<section class="about-image-reveal" aria-labelledby="about-image-reveal-title">
+  <figure class="about-image-reveal__media"><img src="assets/images/DSCF2332.webp" alt="Marcin Myszka" loading="eager" decoding="async"></figure>
+  <div class="about-image-reveal__shade" aria-hidden="true"></div>
+  <div class="about-image-reveal__meta"><span>Marcin Myszka</span><span>True crime / creator</span></div>
+  <h2 class="about-image-reveal__title" id="about-image-reveal-title"><span>O</span> <span class="accent">mnie</span></h2>
+  <div class="about-image-reveal__caption">Twórca internetowy • Autor • Podcaster</div>
+  <div class="about-image-reveal__index" aria-hidden="true">02 / PORTRET</div>
 </section>
 <section class="content-section" id="bio"><div class="wrap"><div class="grid-12"><div class="section-label">O mnie</div><div class="section-main">
 <div class="about-lead-grid"><figure class="editorial-photo editorial-photo--portrait"><img src="assets/images/marcin-myszka-hero.jpg" alt="Marcin Myszka, fot. Bartosz Pussak" loading="eager"></figure><div class="editorial-copy long-copy"><div class="page-kicker">Twórca internetowy • Autor • Podcaster</div><h2 class="section-title small">True crime od 2015 roku.</h2><div class="red-rule"></div><p><strong>Marcin Myszka</strong> specjalizuje się w tematyce true crime. Tworzy materiały poświęcone prawdziwym zbrodniom, niewyjaśnionym sprawom i najbardziej zagadkowym historiom kryminalnym. Jest twórcą <strong>„Kryminatorium”</strong> — jednego z najpopularniejszych podcastów kryminalnych w Polsce, a jego materiały w internecie zgromadziły łącznie setki milionów wyświetleń.</p><p>Zainteresowanie tematyką kryminalną pojawiło się u niego już w dzieciństwie. Oglądał programy „997”, „Telewizyjne Biuro Śledcze” czy „Ktokolwiek widział, ktokolwiek wie”, czytał kryminalne czasopisma i szukał książek o kryminologii i kryminalistyce. Ważnym doświadczeniem było także dzieciństwo spędzone w pobliżu więzienia — miejsca, które przez lata budziło ciekawość tego, co dzieje się za murami.</p></div></div>
