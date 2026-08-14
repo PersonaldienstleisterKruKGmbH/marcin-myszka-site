@@ -233,3 +233,22 @@
   randomize();
   print.addEventListener('animationiteration', randomize);
 })();
+
+// Project-wide typography rule: headings must not end with a full stop.
+(() => {
+  const headings = document.querySelectorAll('h1, h2, h3');
+
+  headings.forEach((heading) => {
+    const walker = document.createTreeWalker(heading, NodeFilter.SHOW_TEXT);
+    const textNodes = [];
+    let node;
+    while ((node = walker.nextNode())) textNodes.push(node);
+
+    for (let i = textNodes.length - 1; i >= 0; i -= 1) {
+      const text = textNodes[i].nodeValue || '';
+      if (!text.trim()) continue;
+      textNodes[i].nodeValue = text.replace(/\.+\s*$/, '');
+      break;
+    }
+  });
+})();
