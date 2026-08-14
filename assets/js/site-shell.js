@@ -61,3 +61,48 @@
 </div>`;
   }
 })();
+
+
+(() => {
+  const replaceProjectImage = (selector, src) => {
+    const img = document.querySelector(selector);
+    if (!img) return;
+    img.src = src;
+    img.removeAttribute('srcset');
+  };
+
+  replaceProjectImage(
+    '.project-niediegetyczne .project-media img',
+    'assets/images/projects/niediegetyczne.webp'
+  );
+  replaceProjectImage(
+    '.project-kryminalne-miasto .project-media img',
+    'assets/images/projects/kryminalne-miasto-2026.webp'
+  );
+  replaceProjectImage(
+    '.project-zbrodnia .project-media img',
+    'assets/images/projects/zbrodnia-obok-ciebie.webp'
+  );
+  replaceProjectImage(
+    '.project-akta .project-media img',
+    'assets/images/projects/akta-tajemnic.webp'
+  );
+
+  const duo = document.querySelector('.project-live .project-media-poster');
+  if (duo) {
+    duo.style.display = 'grid';
+    duo.style.gridTemplateColumns = '1fr 1fr';
+
+    const first = duo.querySelector('img');
+    if (first) {
+      first.src = 'assets/images/projects/audiobooki-true-crime.webp';
+      first.removeAttribute('srcset');
+
+      const live = first.cloneNode(false);
+      live.src = 'assets/images/projects/kryminatorium-live-2026.webp';
+      live.alt = 'Kryminatorium Live';
+      live.loading = 'lazy';
+      duo.appendChild(live);
+    }
+  }
+})();
