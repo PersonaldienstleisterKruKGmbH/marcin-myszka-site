@@ -1,6 +1,8 @@
-// Project-wide typography rule: headings must not end with a full stop.
-// Run this before animations capture their original text.
+// Inner-page typography rule: headings must not end with a full stop.
+// Homepage keeps its original punctuation.
 (() => {
+  if (!document.body.classList.contains('subpage')) return;
+
   const headings = document.querySelectorAll('h1, h2, h3');
 
   headings.forEach((heading) => {
