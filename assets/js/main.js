@@ -1,8 +1,6 @@
-// Inner-page typography rule: headings must not end with a full stop.
-// Homepage keeps its original punctuation.
+// Project-wide typography rule: headings and subheadings must not end with a full stop.
+// Run before animations capture their original text, including the homepage.
 (() => {
-  if (!document.body.classList.contains('subpage')) return;
-
   const headings = document.querySelectorAll('h1, h2, h3');
 
   headings.forEach((heading) => {
@@ -11,12 +9,11 @@
     let node;
     while ((node = walker.nextNode())) textNodes.push(node);
 
-    for (let i = textNodes.length - 1; i >= 0; i -= 1) {
-      const text = textNodes[i].nodeValue || '';
-      if (!text.trim()) continue;
-      textNodes[i].nodeValue = text.replace(/\.+\s*$/, '');
-      break;
-    }
+    textNodes.forEach((textNode) => {
+      const text = textNode.nodeValue || '';
+      if (!text.trim()) return;
+      textNode.nodeValue = text.replace(/\.+(?=\s*$)/, '');
+    });
   });
 })();
 
