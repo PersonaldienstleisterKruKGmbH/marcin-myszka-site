@@ -27,6 +27,18 @@
 })();
 
 (() => {
+  if (document.body.classList.contains('subpage')) return;
+  const shell = document.querySelector('.credentials-shell-v18');
+  const section = shell?.closest('section');
+  if (!section) return;
+  section.style.setProperty('background-color', '#eee9e1', 'important');
+  section.style.setProperty('background-image', 'url("assets/images/media-awards-parchment-blood.webp")', 'important');
+  section.style.setProperty('background-size', 'cover', 'important');
+  section.style.setProperty('background-position', 'center', 'important');
+  section.style.setProperty('background-repeat', 'no-repeat', 'important');
+})();
+
+(() => {
   const replaceProjectImage = (selector, src) => { const img = document.querySelector(selector); if (!img) return; img.src = src; img.removeAttribute('srcset'); };
   replaceProjectImage('.project-niediegetyczne .project-media img','assets/images/projects/niediegetyczne.webp');
   replaceProjectImage('.project-kryminalne-miasto .project-media img','assets/images/projects/kryminalne-miasto-2026.webp');
