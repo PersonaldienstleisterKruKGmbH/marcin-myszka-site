@@ -1,4 +1,14 @@
 (() => {
+  if (document.body.classList.contains('subpage') && !document.querySelector('link[data-editorial-kicker-style]')) {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'assets/css/editorial-kicker.css';
+    link.dataset.editorialKickerStyle = 'true';
+    document.head.appendChild(link);
+  }
+})();
+
+(() => {
   const header = document.querySelector('[data-site-header]');
   if (header) {
     header.innerHTML = `<div class="wrap nav">
